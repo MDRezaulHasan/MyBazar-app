@@ -1,13 +1,20 @@
 import React from "react";
 import {Grid} from "@material-ui/core"
 import Product from "./Product/Product"
+import imageMacbook from "../../image/img-1.jpg"
+import imagePhone from "../../image/img-2.jpg"
+import useStyles from "./styles"
+
 const products =[
-    {id: 1, name: "Shoes", description: "Running shoes.", price: "$5",image:"https://i.ibb.co/Qp1SXBw/commerce.png"},
-    {id: 2, name: "Macbook", description: "Apple macbook.",price:"$10",image:"https://i.ibb.co/Qp1SXBw/commerce.png"},
+    {id: 1, name: "Phone", description: "Samsung Phone.", price: "$5",image:imagePhone},
+    {id: 2, name: "Macbook", description: "Apple macbook.",price:"$10",image:imageMacbook},
 ]
 
 const Products = ()=>{
-    return(  <main>
+    const classes = useStyles();
+
+    return(  <main className= {classes.content}>
+        <div className={classes.toolbar}/>
         <Grid container justify = "center" spacing = {4}>
             {products.map((product)=>(
                 //here we are mapping with our products and mentioning our grid view in different size. xs = full width, sm= 2 space in one row, md= medium, lg = large
